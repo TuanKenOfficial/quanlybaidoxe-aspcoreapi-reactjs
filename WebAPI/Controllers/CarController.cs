@@ -81,9 +81,9 @@ namespace WebAPI.Controllers
                     update dbo.Car set
                     TenLoaiXe= '" + car.TenLoaiXe + @"'
                     ,BienSoXe= '" + car.BienSoXe + @"'
-                    ,BienSoXe= '" + car.SoODo + @"'
-                    ,BienSoXe= '" + car.SoTang + @"'
                     ,TrangThaiXe ='" + car.TrangThaiXe + @"'
+                    ,SoODo= '" + car.SoODo + @"'
+                    ,SoTang= '" + car.SoTang + @"'
                     where CarId = " + car.CarId + @" 
                     ";
             DataTable table = new DataTable();
