@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select UmbrellaId, SoODo, SoTang, TenLoaiXe, BienSoXe, TrangThaiODo from dbo.Umbrella";
+                    select UmbrellaId, SoODo, SoTang, TrangThaiODo from dbo.Umbrella";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("QuanlybaidoxeAppCon");
             SqlDataReader myReader;
@@ -53,8 +53,6 @@ namespace WebAPI.Controllers
                     (
                      '" + umbrella.SoODo + @"'
                     ,'" + umbrella.SoTang + @"'
-                    ,'" + umbrella.TenLoaiXe + @"'
-                    ,'" + umbrella.BienSoXe + @"'
                     ,'" + umbrella.TrangThaiODo + @"'
                     )
                     ";
@@ -84,8 +82,6 @@ namespace WebAPI.Controllers
                     update dbo.Umbrella set
                     SoODo='" + umbrella.SoODo + @"'
                     ,SoTang='" + umbrella.SoTang + @"'
-                    ,TenLoaiXe='" + umbrella.TenLoaiXe + @"'
-                    ,BienSoXe='" + umbrella.BienSoXe + @"'
                     ,TrangThaiODo='" + umbrella.TrangThaiODo + @"'
                     where UmbrellaId = " + umbrella.UmbrellaId + @" 
                     ";
@@ -139,7 +135,7 @@ namespace WebAPI.Controllers
         public JsonResult GetAllBienSoXe()
         {
             string query = @"
-                    select SoODo, SoTang, TenLoaiXe, BienSoXe from dbo.Umbrella
+                    select SoODo, SoTang from dbo.Umbrella
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("QuanlybaidoxeAppCon");

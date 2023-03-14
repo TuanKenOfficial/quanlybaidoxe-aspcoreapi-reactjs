@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select CarId, TenLoaiXe, BienSoXe,TrangThaiXe from dbo.Car";
+                    select CarId, TenLoaiXe, BienSoXe, TrangThaiXe,SoODo, SoTang from dbo.Car";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("QuanlybaidoxeAppCon");
             SqlDataReader myReader;
@@ -51,6 +51,8 @@ namespace WebAPI.Controllers
                     insert into dbo.Car values 
                     ('" + car.TenLoaiXe + @"'
                     ,'" + car.BienSoXe + @"'
+                    ,'" + car.SoODo + @"'
+                    ,'" + car.SoTang + @"'
                     ,'" + car.TrangThaiXe + @"'
                     )
                     ";
@@ -79,6 +81,8 @@ namespace WebAPI.Controllers
                     update dbo.Car set
                     TenLoaiXe= '" + car.TenLoaiXe + @"'
                     ,BienSoXe= '" + car.BienSoXe + @"'
+                    ,BienSoXe= '" + car.SoODo + @"'
+                    ,BienSoXe= '" + car.SoTang + @"'
                     ,TrangThaiXe ='" + car.TrangThaiXe + @"'
                     where CarId = " + car.CarId + @" 
                     ";
@@ -132,7 +136,7 @@ namespace WebAPI.Controllers
         public JsonResult GetAllBienSoXe()
         {
             string query = @"
-                    select TenLoaiXe, BienSoXe from dbo.Car
+                    select TenLoaiXe, BienSoXe, SoODo, SoTang from dbo.Car
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("QuanlybaidoxeAppCon");

@@ -6,7 +6,7 @@ namespace WebAPI.Models
     {
         public int FloorId { get; set; }
         [Required]
-        public int SoTang { get; set; }
+        public int SoTang { get; set; } // số tầng ở đây có nghĩa có nhiều tầng, ví dụ từ tầng 1- tầng 10
         [Required]
         public int TrangThai { get; set; }    
     }
