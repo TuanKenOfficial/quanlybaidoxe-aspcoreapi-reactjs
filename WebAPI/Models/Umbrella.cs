@@ -10,6 +10,6 @@ namespace WebAPI.Models
         [Required]
         public int SoTang { get; set; } 
         [Required]
-        public int TrangThaiODo { get; set; }
+        public string? TrangThaiODo { get; set; }
     }
 }
