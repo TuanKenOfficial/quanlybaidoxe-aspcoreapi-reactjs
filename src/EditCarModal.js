@@ -10,7 +10,7 @@ export class EditCarModal extends Component{
     }
 
     componentDidMount(){
-        fetch(process.env.REACT_APP_API+'car')
+        fetch(process.env.REACT_APP_API+'umbrella')
         .then(response=>response.json())
         .then(data=>{
             this.setState({umbs:data});
