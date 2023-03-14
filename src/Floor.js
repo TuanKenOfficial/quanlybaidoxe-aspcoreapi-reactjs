@@ -47,7 +47,7 @@ export class Floor extends Component{
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Số Tầng</th>
+                            <th>Tầng</th>
                             <th>Trạng Thái</th>
                             <th>Lựa chọn</th>
                         </tr>
