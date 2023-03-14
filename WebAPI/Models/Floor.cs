@@ -8,6 +8,6 @@ namespace WebAPI.Models
         [Required]
         public int SoTang { get; set; } // số tầng ở đây có nghĩa có nhiều tầng, ví dụ từ tầng 1- tầng 10
         [Required]
-        public int TrangThai { get; set; }    
+        public string? TrangThai { get; set; }    
     }
 }

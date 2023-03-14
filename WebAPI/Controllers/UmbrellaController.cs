@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;
 using WebAPI.Models;
+using System.ComponentModel;
+
 
 namespace WebAPI.Controllers
 {
@@ -13,6 +15,8 @@ namespace WebAPI.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IWebHostEnvironment _env;
+
+       
         public UmbrellaController(IConfiguration configuration, IWebHostEnvironment env)
         {
             _configuration = configuration;
@@ -23,6 +27,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         public JsonResult Get()
         {
+
             string query = @"
                     select UmbrellaId, SoODo, SoTang, TrangThaiODo from dbo.Umbrella";
             DataTable table = new DataTable();
@@ -56,6 +61,7 @@ namespace WebAPI.Controllers
                     ,'" + umbrella.TrangThaiODo + @"'
                     )
                     ";
+           
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("QuanlybaidoxeAppCon");
             SqlDataReader myReader;
